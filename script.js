@@ -1,3 +1,22 @@
+// Dark Mode Toggle
+const themeToggle = document.createElement('div');
+themeToggle.className = 'theme-toggle';
+themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+document.body.appendChild(themeToggle);
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+});
+
+// LocalStorage'den tema durumunu yükle
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+}
 // Sayfa içi bağlantılara yumuşak kaydırma (Smooth Scroll)
 document.querySelectorAll('.post-read-more').forEach(button => {
     button.addEventListener('click', function(e) {

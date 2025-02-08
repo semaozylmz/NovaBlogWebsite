@@ -1,4 +1,3 @@
-/* Temel Değişkenler */
 :root {
     --primary: #2F89FC;
     --secondary: #6C757D;
@@ -24,7 +23,62 @@ body {
     line-height: 1.7;
     color: var(--dark);
     background: var(--light);
+} 
+/* Dark Mode Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 2rem; /* Üstten 2rem mesafe */
+    right: 2rem; /* Sağdan 2rem mesafe */
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Dark Mode Stilleri */
+body.dark-mode {
+    --light: #2D3436;
+    --dark: #F8F9FA;
+    --secondary: #ADB5BD;
+    background: var(--light);
+}
+
+body.dark-mode .navbar {
+    background: rgba(45, 52, 54, 0.95);
+}
+
+body.dark-mode .post-card {
+    background: #374047;
+}
+
+body.dark-mode .post-title,
+body.dark-mode .post-excerpt,
+body.dark-mode .post-meta,
+body.dark-mode .post-full-content {
+    color: var(--dark);
+}
+
+body.dark-mode .footer {
+    background: #1a1e20;
+}
+
+body.dark-mode .footer-links a,
+body.dark-mode .footer-social a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 
 /* Konteyner */
 .container {
@@ -68,7 +122,16 @@ body {
     font-weight: 700;
     color: var(--primary);
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
+
+.logo-icon {
+    width: 24px; /* İkonun genişliği */
+    height: 24px; /* İkonun yüksekliği */
+    margin-right: 8px; /* İkon ile yazı arasındaki boşluk */
+}
+
 
 .nav-links {
     display: flex;
