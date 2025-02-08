@@ -100,7 +100,7 @@ body.dark-mode .footer-social a {
 }
 
 .navbar.scrolled {
-    background: rgba(0, 0, 0, 0.7); /* Daha koyu navbar rengi */
+    background:#4e565a; /* Daha koyu navbar rengi */
 }
 .navbar.scrolled .nav-link {
     color: white; /* Navbar scrolled olduğunda yazı rengini beyaza çevir */
@@ -329,9 +329,9 @@ p {
 
 /* Geliştirilmiş Footer */
 .footer {
-    background: var(--dark);
+    background-color: #4e565a;
     color: white;
-    padding: 4rem 0;
+    padding: 2rem 0; /* Üst ve alt padding'i küçülttük */
     position: relative;
     text-align: left;
 }
@@ -395,12 +395,14 @@ p {
 
 .footer-bottom {
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 4rem; /* Footer alt kısmını daha aşağıya çektik */
     padding-top: 1rem;
     font-size: 1.4rem;
     color: rgba(255, 255, 255, 0.7);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.228); /* Daha düşük bir konum için aynı kalabilir */
 }
+
+
 
 @media (max-width: 768px) {
     .footer .container {
