@@ -41,3 +41,30 @@ window.addEventListener('scroll', function () {
         navbar.classList.remove('scrolled');
     }
 });
+// Social Share Butonları
+document.querySelectorAll('.share-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const platform = this.dataset.platform;
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.title);
+        
+        let shareUrl;
+        switch(platform) {
+            case 'twitter':
+                shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+                break;
+            case 'facebook':
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                break;
+            case 'linkedin':
+                shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`;
+                break;
+            case 'whatsapp':
+                shareUrl = `https://api.whatsapp.com/send?text=${title} ${url}`;
+                break;
+        }
+        
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    });
+});

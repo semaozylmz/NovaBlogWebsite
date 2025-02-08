@@ -321,11 +321,58 @@ p {
     display: inline-block;
     margin-top: 1rem;
 }
+/* Paylaşım Butonları */
+.post-share {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.post-share span {
+    font-size: 1.2rem;
+    color: var(--secondary);
+}
+
+.share-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.share-btn i {
+    font-size: 1.6rem;
+}
+
+/* Platform Renkleri */
+.twitter { background: #1DA1F2; color: white; }
+.facebook { background: #3B5998; color: white; }
+.linkedin { background: #0077B5; color: white; }
+.whatsapp { background: #25D366; color: white; }
+
+/* Hover Efektleri */
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Uyumu */
+body.dark-mode .post-share {
+    border-color: rgba(255, 255, 255, 0.1);
+}
 
 /* Blog ve Footer Arasına Boşluk */
 .featured-posts {
     margin-bottom: 5rem;
 }
+
 
 /* Geliştirilmiş Footer */
 .footer {
